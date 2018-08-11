@@ -1,24 +1,44 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a basic Rails API which will serve some test data for this example map application.
 
-Things you may want to cover:
+## Requirements
 
-* Ruby version
+It's assumed your system has the following tools installed:
+- Ruby (> 2.2)
+- Rails (>2.5)
+- PostgreSQL
 
-* System dependencies
+## Setup
 
-* Configuration
+First clone the repo into a directory.
 
-* Database creation
+```bash
+> mkdir lc_api && cd lc_api
+> git clone https://github.com/koriner/lc_api.git .
+```
 
-* Database initialization
+To set up the app and database:
 
-* How to run the test suite
+```bash
+# creates and migrates the db
+> rake db:create
+> rake db:migrate
 
-* Services (job queues, cache servers, search engines, etc.)
+# seeds the db with example data
+> rake db:seed
+```
 
-* Deployment instructions
+## Running the app
 
-* ...
+Run the server:
+```bash
+> rails s
+```
+
+Check it's working:
+
+Visit `http://0.0.0.0:3001` in your browser. You should see the 'Welcome to Rails' homepage.
+
+Now visit `http://0.0.0.0:3001/properties`. You should see some JSON output from the API.
+
